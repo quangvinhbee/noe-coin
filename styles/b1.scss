@@ -1,0 +1,177 @@
+$primaryColor: #0098ea;
+
+section.noe-floor-1 {
+  background: url("../images/road-left.png"), url("../images/road-right.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 1500px;
+  position: relative;
+  margin-top: -80px;
+
+  .inner {
+    max-width: 650px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #02080e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .b1-users {
+      width: 988px;
+      transform: translateY(-100px);
+    }
+
+    .b1-elevator {
+      position: relative;
+
+      .b1 {
+        position: absolute;
+        top: 86px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .b1-elevator-image {
+        width: 650px;
+        height: 850px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .left {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: calc(50% - 650px / 2);
+    height: 100%;
+
+    .left-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      justify-content: flex-end;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 34px;
+
+      .put-here {
+        position: relative;
+        .wrapper-thinking {
+          .noe-image {
+            margin-bottom: 60px;
+          }
+
+          .box-chat {
+            background: url("../images/box-chat-1.png") no-repeat;
+            background-size: contain;
+            width: 350px;
+            height: 170px;
+            position: absolute;
+            top: -58%;
+            left: 30%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
+              font-size: 96px;
+              color: #eaeaec;
+              text-transform: uppercase;
+            }
+          }
+
+          .thinking-1 {
+            position: absolute;
+            top: -10%;
+            left: 75%;
+            width: 50px;
+            height: 33px;
+          }
+          .thinking-2 {
+            position: absolute;
+            top: 5%;
+            left: 75%;
+            width: 30px;
+            height: 20px;
+          }
+        }
+
+        .line-point-out {
+          position: absolute;
+          top: 50%;
+          right: -80%;
+
+          img.b1-arrow {
+            transform: translate(-10px, 10px);
+          }
+        }
+      }
+
+      .copy-noe {
+        height: 100px;
+        width: 549px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $primaryColor;
+        p {
+          font-size: 72px;
+          color: #eaeaec;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  .right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: calc(50% - 650px / 2);
+    height: 100%;
+
+    .right-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      justify-content: flex-end;
+      align-items: end;
+      text-align: center;
+      padding-bottom: 34px;
+      position: relative;
+
+      .noe-description {
+        background: url("../images/box-chat-2.png") no-repeat;
+        background-size: contain;
+        width: 548px;
+        height: 366px;
+        position: absolute;
+        bottom: 30%;
+        left: 5%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+          font-size: 55px;
+          color: #eaeaec;
+          max-width: 410px;
+          width: 100%;
+          word-break: break-all;
+        }
+      }
+
+      .noe-image {
+        margin-right: 50px;
+      }
+    }
+  }
+}

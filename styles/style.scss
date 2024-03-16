@@ -1,0 +1,28 @@
+@import "./hero.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Jomhuria&family=Unbounded:wght@200..900&display=swap");
+
+.jomhuria {
+  font-family: "Jomhuria", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.coins {
+  text-align: center;
+  margin-top: -80px;
+  margin-left: 60px;
+  z-index: 9;
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    img {
+      margin-left: -80px;
+      &:nth-child(2n) {
+        transform: translateY(20px) rotate(90deg);
+      }
+    }
+  }
+}
