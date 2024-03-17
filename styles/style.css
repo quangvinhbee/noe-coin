@@ -7,10 +7,22 @@ section.hero-section {
   height: 1800px;
   position: relative;
 }
+@media (max-width: 576px) {
+  section.hero-section {
+    background: url("../images/hero-mobile.png") no-repeat;
+    background-size: cover;
+    height: 450px;
+  }
+}
 section.hero-section .images .noe-1 {
   position: absolute;
   top: 68px;
   right: 210px;
+}
+@media (max-width: 576px) {
+  section.hero-section .images .noe-1 {
+    display: none;
+  }
 }
 section.hero-section .images .noe-2 {
   position: absolute;
@@ -21,6 +33,13 @@ section.hero-section .images .noe-2 {
   -o-object-fit: contain;
      object-fit: contain;
 }
+@media (max-width: 576px) {
+  section.hero-section .images .noe-2 {
+    bottom: 70px;
+    width: 114px;
+    height: 114px;
+  }
+}
 section.hero-section .images .hero-1 {
   position: absolute;
   bottom: 200px;
@@ -30,12 +49,24 @@ section.hero-section .images .hero-1 {
   -o-object-fit: contain;
      object-fit: contain;
 }
+@media (max-width: 576px) {
+  section.hero-section .images .hero-1 {
+    bottom: 24px;
+    width: 114px;
+    height: 94px;
+  }
+}
 section.hero-section .inner {
   max-width: 650px;
   width: 100%;
   height: 100%;
-  margin: 0 auto;
   background-color: #02080e;
+  margin: 0 auto;
+}
+@media (max-width: 576px) {
+  section.hero-section .inner {
+    max-width: 155px;
+  }
 }
 section.hero-section .inner .hero-content {
   text-align: center;
@@ -44,6 +75,11 @@ section.hero-section .inner .hero-content h1 {
   color: #0098ea;
   font-size: 500px;
 }
+@media (max-width: 576px) {
+  section.hero-section .inner .hero-content h1 {
+    font-size: 125px;
+  }
+}
 section.hero-section .inner .hero-content .description {
   width: 100%;
   height: 156px;
@@ -51,12 +87,22 @@ section.hero-section .inner .hero-content .description {
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateY(-100px);
+}
+@media (max-width: 576px) {
+  section.hero-section .inner .hero-content .description {
+    height: 37px;
+    transform: translateY(0px);
+  }
 }
 section.hero-section .inner .hero-content .description p {
   color: #1a1a1a;
   font-size: 128px;
   text-transform: uppercase;
+}
+@media (max-width: 576px) {
+  section.hero-section .inner .hero-content .description p {
+    font-size: 30px;
+  }
 }
 section.hero-section .inner .hero-content .elevator-img {
   max-width: 650px;
@@ -81,6 +127,12 @@ section.hero-section .inner .logo img {
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media (max-width: 576px) {
+  section.hero-section .inner .logo img {
+    width: 216px;
+    height: 216px;
+  }
+}
 
 .jomhuria {
   font-family: "Jomhuria", serif;
@@ -92,16 +144,40 @@ section.hero-section .inner .logo img {
   text-align: center;
   margin-top: -80px;
   margin-left: 60px;
+  padding-bottom: 40px;
   z-index: 9;
+}
+@media (max-width: 576px) {
+  .coins {
+    margin-left: 16px;
+    margin-top: -40px;
+    padding-bottom: 20px;
+  }
 }
 .coins .wrapper {
   display: flex;
   justify-content: center;
   z-index: 10;
 }
+.coins .wrapper:nth-child(2) {
+  margin-top: -100px;
+}
+@media (max-width: 576px) {
+  .coins .wrapper:nth-child(2) {
+    margin-top: -20px;
+  }
+}
 .coins .wrapper img {
   margin-left: -80px;
 }
 .coins .wrapper img:nth-child(2n) {
   transform: translateY(20px) rotate(90deg);
+}
+@media (max-width: 576px) {
+  .coins .wrapper img {
+    width: 34px;
+    height: 34px;
+    margin-left: -12px;
+    transform: translateY(16px) rotate(90deg);
+  }
 }/*# sourceMappingURL=style.css.map */

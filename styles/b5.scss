@@ -1,5 +1,11 @@
 $primaryColor: #0098ea;
 
+@mixin media($screen: 576px) {
+  @media (max-width: $screen) {
+    @content;
+  }
+}
+
 section.noe-b4 {
   background: url("../images/floor-4.png");
   background-size: cover;
@@ -8,6 +14,12 @@ section.noe-b4 {
 
   display: flex;
   align-items: center;
+
+  @include media() {
+    background-position: center -100px;
+    flex-direction: row-reverse;
+  }
+
   .inner {
     max-width: 650px;
     width: 100%;
@@ -18,6 +30,11 @@ section.noe-b4 {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    margin: 0 auto;
+
+    @include media() {
+      max-width: 155px;
+    }
 
     .b1-elevator {
       position: relative;
@@ -28,6 +45,12 @@ section.noe-b4 {
         top: 86px;
         left: 50%;
         transform: translateX(-50%);
+
+        @include media() {
+          width: 28px;
+          height: 15px;
+          top: 10px;
+        }
       }
 
       .noe-in-elevator-11 {
@@ -35,11 +58,21 @@ section.noe-b4 {
         bottom: 46px;
         left: 50%;
         transform: translateX(-50%);
+
+        @include media() {
+          width: 50px;
+          height: 70px;
+        }
       }
 
       .b1-elevator-image {
         width: 650px;
         height: 850px;
+
+        @include media() {
+          width: 100%;
+          height: 200px;
+        }
       }
 
       .arrow-5 {
@@ -47,6 +80,10 @@ section.noe-b4 {
         bottom: 53%;
         left: 110%;
         transform: translateX(-50%);
+
+        @include media() {
+          display: none;
+        }
       }
     }
   }
@@ -54,11 +91,20 @@ section.noe-b4 {
   .left {
     width: calc(50% - 650px / 2);
     padding-bottom: 50px;
+
+    @include media() {
+      width: calc(50vw - 155px / 2);
+    }
   }
 
   .right {
     width: calc(50% - 650px / 2);
     margin-top: 150px;
+
+    @include media() {
+      width: calc(50vw - 155px / 2);
+      margin-top: 0px;
+    }
 
     .right-wrapper {
       height: 100%;
@@ -68,6 +114,18 @@ section.noe-b4 {
       align-items: center;
       flex-direction: column;
       gap: 60px;
+
+      @include media() {
+        gap: 12px;
+      }
+
+      img {
+        @include media() {
+          width: 100px;
+          height: 56px;
+        }
+      }
+
       .buy-noe {
         width: 459px;
         height: 100px;
@@ -76,12 +134,22 @@ section.noe-b4 {
         justify-content: center;
         align-items: center;
         text-align: center;
+
+        @include media() {
+          width: 94px;
+          height: 20px;
+        }
+
         p {
           font-size: 104px;
           color: #eaeaec;
           width: 100%;
           word-break: break-all;
           text-transform: uppercase;
+
+          @include media() {
+            font-size: 20px;
+          }
         }
       }
     }

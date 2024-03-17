@@ -1,5 +1,11 @@
 $primaryColor: #0098ea;
 
+@mixin media($screen: 576px) {
+  @media (max-width: $screen) {
+    @content;
+  }
+}
+
 section.noe-b2 {
   background: url("../images/floor-b2.png");
   background-size: cover;
@@ -7,7 +13,13 @@ section.noe-b2 {
   background-position: center -500px;
 
   display: flex;
-  align-items: flex-end;
+  position: relative;
+
+  @include media() {
+    background-position: center center;
+    overflow: hidden;
+  }
+
   .inner {
     max-width: 650px;
     width: 100%;
@@ -20,28 +32,53 @@ section.noe-b2 {
     align-items: center;
     position: relative;
 
+    @include media() {
+      max-width: 155px;
+    }
+
     .down {
       height: 50%;
       padding: 50px 0;
       img {
         width: 159px;
         height: 555px;
+
+        @include media() {
+          width: 38px;
+          height: 134px;
+        }
       }
     }
 
     .down-bottom {
       height: 360px;
+
+      @include media() {
+        height: 60px;
+      }
     }
 
     .b1-elevator {
       position: relative;
       height: 50%;
 
+      .b1-elevator-image {
+        @include media() {
+          width: 155px;
+          height: 200px;
+        }
+      }
+
       .b2 {
         position: absolute;
         top: 86px;
         left: 50%;
         transform: translateX(-50%);
+
+        @include media() {
+          width: 28px;
+          height: 15px;
+        }
       }
 
       .noe-in-elevator {
@@ -49,6 +86,12 @@ section.noe-b2 {
         bottom: 46px;
         left: 50%;
         transform: translateX(-50%);
+
+        @include media() {
+          width: 68px;
+          height: 95px;
+          bottom: 10px;
+        }
       }
 
       .point-out-b2 {
@@ -61,6 +104,11 @@ section.noe-b2 {
       .b1-elevator-image {
         width: 650px;
         height: 850px;
+
+        @include media() {
+          width: 100%;
+          height: 200px;
+        }
       }
     }
   }
@@ -68,6 +116,13 @@ section.noe-b2 {
   .left {
     width: calc(50% - 650px / 2);
     padding-bottom: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    @include media() {
+      width: calc(50% - 155px / 2);
+    }
 
     .left-wrapper {
       text-align: center;
@@ -78,6 +133,28 @@ section.noe-b2 {
         object-fit: contain;
         margin-bottom: 88px;
         margin-top: 50px;
+
+        @include media() {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      .b2-noe-logo {
+        margin-bottom: 190px;
+
+        @include media() {
+          width: 44px;
+          height: 44px;
+          margin-bottom: 20px;
+        }
+      }
+
+      .b2-noe-7 {
+        @include media() {
+          width: 72px;
+          height: 77px;
+        }
       }
 
       .description {
@@ -87,6 +164,16 @@ section.noe-b2 {
         margin: 0 auto;
         word-break: break-all;
         text-transform: uppercase;
+        padding-bottom: 100px;
+        margin-bottom: 38px;
+
+        @include media() {
+          font-size: 14px;
+          max-width: 74px;
+          width: 74px;
+          padding-bottom: 0;
+          margin-bottom: 20px;
+        }
 
         span {
           color: $primaryColor;
@@ -96,15 +183,28 @@ section.noe-b2 {
   }
 
   .right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
     width: calc(50% - 650px / 2);
     height: 100%;
+
+    @include media() {
+      width: calc(50vw - 155px / 2);
+    }
 
     .right-wrapper {
       text-align: center;
       padding-bottom: 355px;
+      transform: translate(-10px, 40%);
 
       .noe-right {
-        transform: translateY(50px);
+        transform: translateY(65px);
+
+        @include media() {
+          width: 95px;
+          height: 78px;
+        }
       }
 
       .box-chat {
@@ -118,23 +218,45 @@ section.noe-b2 {
         transform: translate(-10px, -50px);
         position: relative;
 
+        @include media() {
+          width: 125px;
+          height: 78px;
+          transform: translateY(50px);
+          background-size: contain;
+        }
+
         p {
           font-size: 128px;
           color: #eaeaec;
           width: 100%;
           word-break: break-all;
           text-transform: uppercase;
+
+          @include media() {
+            font-size: 20px;
+          }
         }
 
         .point-out {
           position: absolute;
           left: -6%;
 
+          :not(img.arrow) {
+            @include media() {
+              width: 18px;
+              height: 10px;
+            }
+          }
+
           .arrow {
             position: absolute;
             left: -6%;
             top: -6%;
             transform: translateY(42px);
+
+            @include media() {
+              display: none;
+            }
           }
         }
       }
