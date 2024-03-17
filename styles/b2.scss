@@ -1,5 +1,11 @@
 $primaryColor: #0098ea;
 
+@mixin media($screen: 576px) {
+  @media (max-width: $screen) {
+    @content;
+  }
+}
+
 section.noe-b1 {
   background: url("../images/floor-b1.png");
   background-size: cover;
@@ -18,12 +24,21 @@ section.noe-b1 {
     justify-content: space-between;
     align-items: center;
 
+    @include media() {
+      max-width: 155px;
+    }
+
     .down {
       height: 50%;
       padding: 50px 0;
       img {
         width: 159px;
         height: 555px;
+
+        @include media() {
+          width: 38px;
+          height: 132px;
+        }
       }
     }
 
@@ -36,6 +51,12 @@ section.noe-b1 {
         top: 86px;
         left: 50%;
         transform: translateX(-50%);
+
+        @include media() {
+          width: 27px;
+          height: 15px;
+          top: 10px;
+        }
       }
 
       .noe-in-elevator {
@@ -43,6 +64,12 @@ section.noe-b1 {
         bottom: 46px;
         left: 50%;
         transform: translateX(-50%);
+
+        @include media() {
+          width: 62px;
+          height: 69px;
+          bottom: 10px;
+        }
       }
 
       .point-out-b2 {
@@ -50,11 +77,21 @@ section.noe-b1 {
         bottom: 28%;
         left: 35%;
         transform: translateX(-50%);
+
+        @include media() {
+          width: 152px;
+          height: 102px;
+        }
       }
 
       .b1-elevator-image {
         width: 650px;
         height: 850px;
+
+        @include media() {
+          width: 100%;
+          height: 200px;
+        }
       }
     }
   }
@@ -82,6 +119,12 @@ section.noe-b1 {
         width: 635px;
         height: 593px;
         object-fit: cover;
+
+        @include media() {
+          width: 110px;
+          height: 103px;
+          left: 50%;
+        }
       }
 
       .box-chat {
@@ -95,6 +138,13 @@ section.noe-b1 {
         position: absolute;
         bottom: 5.5%;
         left: 20%;
+
+        @include media() {
+          width: 107px;
+          height: 107px;
+          background-size: contain;
+        }
+
         p {
           max-width: 362px;
           font-size: 128px;
@@ -103,6 +153,11 @@ section.noe-b1 {
           width: 100%;
           word-break: break-all;
           text-transform: uppercase;
+
+          @include media() {
+            font-size: 28px;
+            max-width: 80px;
+          }
         }
       }
     }
@@ -132,6 +187,20 @@ section.noe-b1 {
         max-width: 410px;
         width: 100%;
         word-break: break-all;
+
+        @include media() {
+          font-size: 22px;
+          width: 62px;
+          transform: translateX(-82%);
+        }
+      }
+
+      img {
+        @include media() {
+          width: 85px;
+          height: 98px;
+          transform: translateX(-60%);
+        }
       }
     }
   }

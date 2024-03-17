@@ -2,6 +2,12 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Jomhuria&family=Unbounded:wght@200..900&display=swap");
 
+@mixin media($screen: 576px) {
+  @media (max-width: $screen) {
+    @content;
+  }
+}
+
 .jomhuria {
   font-family: "Jomhuria", serif;
   font-weight: 400;
@@ -12,16 +18,37 @@
   text-align: center;
   margin-top: -80px;
   margin-left: 60px;
+  padding-bottom: 40px;
   z-index: 9;
+
+  @include media() {
+    margin-left: 16px;
+    margin-top: -40px;
+    padding-bottom: 20px;
+  }
 
   .wrapper {
     display: flex;
     justify-content: center;
     z-index: 10;
+    &:nth-child(2) {
+      margin-top: -100px;
+      @include media() {
+        margin-top: -20px;
+      }
+    }
+
     img {
       margin-left: -80px;
       &:nth-child(2n) {
         transform: translateY(20px) rotate(90deg);
+      }
+
+      @include media() {
+        width: 34px;
+        height: 34px;
+        margin-left: -12px;
+        transform: translateY(16px) rotate(90deg);
       }
     }
   }

@@ -1,13 +1,22 @@
 $primaryColor: #0098ea;
 
+@mixin media($screen: 576px) {
+  @media (max-width: $screen) {
+    @content;
+  }
+}
+
 section.noe-floor-1 {
   background: url("../images/road-left.png"), url("../images/road-right.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 1500px;
   position: relative;
   margin-top: -80px;
+
+  @include media() {
+    margin-top: -10px;
+  }
 
   .inner {
     max-width: 650px;
@@ -20,9 +29,18 @@ section.noe-floor-1 {
     justify-content: space-between;
     align-items: center;
 
+    @include media() {
+      max-width: 155px;
+    }
+
     .b1-users {
       width: 988px;
       transform: translateY(-100px);
+
+      @include media() {
+        width: 204px;
+        transform: translateY(-10px);
+      }
     }
 
     .b1-elevator {
@@ -33,12 +51,23 @@ section.noe-floor-1 {
         top: 86px;
         left: 50%;
         transform: translateX(-50%);
+
+        @include media() {
+          width: 28px;
+          height: 10px;
+          top: 20px;
+        }
       }
 
       .b1-elevator-image {
         width: 650px;
         height: 850px;
         object-fit: cover;
+
+        @include media() {
+          width: 100%;
+          height: 200px;
+        }
       }
     }
   }
@@ -62,9 +91,19 @@ section.noe-floor-1 {
 
       .put-here {
         position: relative;
+
         .wrapper-thinking {
+          @include media() {
+            transform: translate(50px, 70px);
+          }
+
           .noe-image {
             margin-bottom: 60px;
+
+            @include media() {
+              width: 74px;
+              height: 86px;
+            }
           }
 
           .box-chat {
@@ -80,10 +119,20 @@ section.noe-floor-1 {
             justify-content: center;
             align-items: center;
 
+            @include media() {
+              width: 68px;
+              height: 32px;
+              top: -40%;
+            }
+
             p {
               font-size: 96px;
               color: #eaeaec;
               text-transform: uppercase;
+
+              @include media() {
+                font-size: 18px;
+              }
             }
           }
 
@@ -93,6 +142,11 @@ section.noe-floor-1 {
             left: 75%;
             width: 50px;
             height: 33px;
+
+            @include media() {
+              width: 10px;
+              height: 6px;
+            }
           }
           .thinking-2 {
             position: absolute;
@@ -100,6 +154,11 @@ section.noe-floor-1 {
             left: 75%;
             width: 30px;
             height: 20px;
+
+            @include media() {
+              width: 5px;
+              height: 6px;
+            }
           }
         }
 
@@ -108,8 +167,23 @@ section.noe-floor-1 {
           top: 50%;
           right: -80%;
 
+          @include media() {
+            right: -120%;
+            top: 80%;
+          }
+
+          .line {
+            @include media() {
+              width: 34px;
+              height: 10px;
+            }
+          }
+
           img.b1-arrow {
             transform: translate(-10px, 10px);
+            @include media() {
+              display: none;
+            }
           }
         }
       }
@@ -121,10 +195,20 @@ section.noe-floor-1 {
         justify-content: center;
         align-items: center;
         background-color: $primaryColor;
+
+        @include media() {
+          width: 74px;
+          height: 16px;
+          transform: translate(70%, 20px);
+        }
         p {
           font-size: 72px;
           color: #eaeaec;
           text-transform: uppercase;
+
+          @include media() {
+            font-size: 12px;
+          }
         }
       }
     }
@@ -144,7 +228,6 @@ section.noe-floor-1 {
       height: 100%;
       justify-content: flex-end;
       align-items: end;
-      text-align: center;
       padding-bottom: 34px;
       position: relative;
 
@@ -157,6 +240,12 @@ section.noe-floor-1 {
         bottom: 30%;
         left: 5%;
 
+        @include media() {
+          width: 98px;
+          height: 64px;
+          transform: translate(-100%, -15px);
+        }
+
         display: flex;
         justify-content: center;
         align-items: center;
@@ -166,11 +255,22 @@ section.noe-floor-1 {
           max-width: 410px;
           width: 100%;
           word-break: break-all;
+
+          @include media() {
+            font-size: 10px;
+            max-width: 72px;
+          }
         }
       }
 
       .noe-image {
         margin-right: 50px;
+
+        @include media() {
+          width: 54px;
+          height: 70px;
+          margin-right: 10px;
+        }
       }
     }
   }
